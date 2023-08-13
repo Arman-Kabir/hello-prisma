@@ -15,17 +15,23 @@ model User {
   email String @unique
   name  String
   role  String
+
+  @@map("users")
 }
 
 model Profile {
   id     Int    @id @default(autoincrement())
   bio    String
   userId Int
+
+  @@map("profiles")
 }
 
 model Category {
   id   Int    @id @default(autoincrement())
   name String
+
+  @@map("categories")
 }
 
 model Post {
@@ -35,4 +41,6 @@ model Post {
   categoryId Int
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
+
+  @@map("posts")
 }
