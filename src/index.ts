@@ -13,7 +13,7 @@ const port = process.env.PORT || 3003;
 
 async function main() {
     app.listen(port, () => {
-        
+        console.log(`server running at ${port}`);
     })
     // const getAllUsers = await prisma.user.findMany();
     // console.log(getAllUsers);
