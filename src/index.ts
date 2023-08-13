@@ -1,11 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import express, { Application } from "express";
-import cors from 'cors';
-
-const app: Application = express();
-app.use(express.json());
-app.use(cors())
-app.use(express.urlencoded({ extended: true }))
+import app from './app';
 
 const prisma = new PrismaClient();
 const port = process.env.PORT || 3003;
@@ -15,7 +9,15 @@ async function main() {
     app.listen(port, () => {
         console.log(`server running at ${port}`);
     })
-    // const getAllUsers = await prisma.user.findMany();
+}
+
+main();
+
+
+
+//////////////////////
+//basic code to practice to understand prisma
+  // const getAllUsers = await prisma.user.findMany();
     // console.log(getAllUsers);
     // const postUser = await prisma.user.create({
     //     data:{
@@ -25,7 +27,3 @@ async function main() {
     //     }
     // });
     // console.log(postUser);
-
-}
-
-main();
